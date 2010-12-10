@@ -27,7 +27,7 @@
 
     <fileSets>
         <!--
-          | Copy all Tomcat stuff
+         | Copy all Tomcat stuff
         -->
         <fileSet>
             <directory>${basedir}/${project.build.directory}/resources/tomcat/bin</directory>
@@ -42,7 +42,7 @@
         </fileSet>
 
         <!--
-          | Copy the Solr webapp stuff
+         | Copy the Solr webapp stuff
         -->
         <fileSet>
             <directory>${basedir}/${project.build.directory}/${project.build.finalName}</directory>
@@ -59,7 +59,7 @@
     </files>
 
     <!--
-      | Copy all project Tomcat dependencies
+     | Copy all project Tomcat dependencies
     -->
     <dependencySets>
         <dependencySet>
@@ -67,11 +67,11 @@
             <scope>provided</scope>
             <excludes>
                 <!--
-                  | Tomcat juli is expected to be put to the $CATALINA_HOME/bin
+                 | Tomcat juli is expected to be put to the $CATALINA_HOME/bin
                 -->
                 <exclude>org.apache.tomcat:juli:*</exclude>
                 <!--
-                  | exclude resources
+                 | exclude resources
                 -->
                 <exclude>${project.groupId}:*:zip:*</exclude>
             </excludes>
