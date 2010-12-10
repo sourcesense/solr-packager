@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ |  Copyright 2010 Sourcesense
+ |
+ |  Licensed under the Apache License, Version 2.0 (the "License");
+ |  you may not use this file except in compliance with the License.
+ |  You may obtain a copy of the License at
+ |
+ |      http://www.apache.org/licenses/LICENSE-2.0
+ |
+ |  Unless required by applicable law or agreed to in writing, software
+ |  distributed under the License is distributed on an "AS IS" BASIS,
+ |  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ |  See the License for the specific language governing permissions and
+ |  limitations under the License.
+-->
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.1"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.1 http://maven.apache.org/xsd/assembly-1.1.1.xsd">
+
+    <id>master-${environment}</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>true</includeBaseDirectory>
+    <baseDirectory>${project.build.finalName}-master-${environment}</baseDirectory>
+
+    <fileSets>
+        <!--
+          | Copy all Tomcat stuff
+        -->
+        <fileSet>
+            <directory>${basedir}/${project.build.directory}/resources/tomcat/bin</directory>
+            <outputDirectory>/bin</outputDirectory>
+            <fileMode>755</fileMode>
+        </fileSet>
+
+        <fileSet>
+            <directory>${basedir}/${project.build.directory}/resources/tomcat/conf</directory>
+            <outputDirectory>/conf</outputDirectory>
+            <filtered>true</filtered>
+        </fileSet>
+
+        <!--
+          | Copy the Solr webapp stuff
+        -->
+        <fileSet>
+            <directory>${project.build.directory}/${project.build.finalName}</directory>
+            <outputDirectory>/webapps/ROOT</outputDirectory>
+        </fileSet>
+    </fileSets>
+
+    <files>
+        <file>
+            <source>${basedir}/${project.build.directory}/${project.build.finalName}-bootstrap.jar</source>
+            <destName>bootstrap.jar</destName>
+            <outputDirectory>/bin</outputDirectory>
+        </file>
+    </files>
+
+    <!--
+      | Copy all project dependencies
+    -->
+    <dependencySets>
+        <!--
+          | Tomcat dependencies
+        -->
+        <dependencySet>
+            <useProjectArtifact>false</useProjectArtifact>
+            <scope>provided</scope>
+            <excludes>
+                <!--
+                  | Tomcat juli is expected to be put to the $CATALINA_HOME/bin
+                -->
+                <exclude>org.apache.tomcat:juli:*</exclude>
+                <!--
+                  | exclude resources
+                -->
+                <exclude>${project.groupId}:*:zip:*</exclude>
+            </excludes>
+            <outputDirectory>/lib</outputDirectory>
+        </dependencySet>
+
+        <dependencySet>
+            <useProjectArtifact>false</useProjectArtifact>
+            <scope>provided</scope>
+            <includes>
+                <include>org.apache.tomcat:juli:*</include>
+            </includes>
+            <outputDirectory>/bin</outputDirectory>
+        </dependencySet>
+
+        <!--
+          | Project dependencies
+        -->
+        <dependencySet>
+            <useProjectArtifact>false</useProjectArtifact>
+            <scope>runtime</scope>
+            <outputDirectory>/webapps/ROOT/WEB-INF/lib</outputDirectory>
+        </dependencySet>
+    </dependencySets>
+
+</assembly>
