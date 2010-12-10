@@ -81,6 +81,7 @@
 
     <modules>
         <module>resources</module>
+        <module>archetypes</module>
     </modules>
 
 </project>
