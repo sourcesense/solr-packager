@@ -45,8 +45,36 @@
          | Copy the Solr webapp stuff
         -->
         <fileSet>
-            <directory>${project.build.directory}/${project.build.finalName}</directory>
+            <directory>${project.build.directory}/resources/solr-webapp</directory>
+            <excludes>
+                <exclude>**/*.ico</exclude>
+            </excludes>
+            <filtered>true</filtered>
             <outputDirectory>/webapps/ROOT</outputDirectory>
+        </fileSet>
+
+        <fileSet>
+            <directory>${project.build.directory}/resources/solr-webapp</directory>
+            <includes>
+                <include>**/*.ico</include>
+            </includes>
+            <outputDirectory>/webapps/ROOT</outputDirectory>
+        </fileSet>
+
+        <fileSet>
+            <directory>${project.build.directory}/resources/solr-commons</directory>
+            <outputDirectory>/webapps/ROOT/WEB-INF/classes</outputDirectory>
+        </fileSet>
+
+        <fileSet>
+            <directory>${basedir}/src/main/solr/commons</directory>
+            <outputDirectory>/webapps/ROOT/WEB-INF/classes</outputDirectory>
+        </fileSet>
+
+        <fileSet>
+            <directory>${basedir}/src/main/solr/master</directory>
+            <filtered>true</filtered>
+            <outputDirectory>/webapps/ROOT/WEB-INF/classes</outputDirectory>
         </fileSet>
     </fileSets>
 
