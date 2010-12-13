@@ -24,7 +24,7 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>solr-slave-archetype</artifactId>
+    <artifactId>solr-standalone-archetype</artifactId>
     <name>Solr Packager :: Resources :: Solr Slave Archetype</name>
     <packaging>jar</packaging>
 

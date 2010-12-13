@@ -24,7 +24,7 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>solr-master-archetype</artifactId>
+    <artifactId>solr-multicore-archetype</artifactId>
     <name>Solr Packager :: Resources :: Solr Master Archetype</name>
     <packaging>jar</packaging>
 
