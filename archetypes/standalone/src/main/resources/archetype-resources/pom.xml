@@ -42,7 +42,7 @@
                     <dependencies>
                         <dependency>
                             <groupId>com.sourcesense.solr</groupId>
-                            <artifactId>assemblies</artifactId>
+                            <artifactId>solr-assemblies</artifactId>
                             <version>${solrp.version}</version>
                         </dependency>
                     </dependencies>
