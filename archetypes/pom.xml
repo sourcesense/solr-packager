@@ -29,8 +29,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>slave</module>
-        <module>master</module>
+        <module>standalone</module>
+        <module>multicore</module>
     </modules>
 
 </project>
