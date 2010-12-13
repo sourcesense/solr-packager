@@ -46,19 +46,19 @@
         -->
         <fileSet>
             <directory>${project.build.directory}/resources/solr-webapp</directory>
+            <outputDirectory>/webapps/ROOT</outputDirectory>
+            <filtered>true</filtered>
             <excludes>
                 <exclude>**/*.ico</exclude>
             </excludes>
-            <filtered>true</filtered>
-            <outputDirectory>/webapps/ROOT</outputDirectory>
         </fileSet>
 
         <fileSet>
             <directory>${project.build.directory}/resources/solr-webapp</directory>
+            <outputDirectory>/webapps/ROOT</outputDirectory>
             <includes>
                 <include>**/*.ico</include>
             </includes>
-            <outputDirectory>/webapps/ROOT</outputDirectory>
         </fileSet>
 
         <fileSet>
@@ -69,12 +69,13 @@
         <fileSet>
             <directory>${basedir}/src/main/solr/commons</directory>
             <outputDirectory>/webapps/ROOT/WEB-INF/classes</outputDirectory>
+            <filtered>true</filtered>
         </fileSet>
 
         <fileSet>
-            <directory>${basedir}/src/main/solr/slave</directory>
-            <filtered>true</filtered>
+            <directory>${basedir}/src/main/solr/master</directory>
             <outputDirectory>/webapps/ROOT/WEB-INF/classes</outputDirectory>
+            <filtered>true</filtered>
         </fileSet>
     </fileSets>
 
