@@ -104,7 +104,7 @@
                 <!--
                  | exclude resources
                 -->
-                <exclude>com.sourcesense.solr:*:zip:*</exclude>
+                <exclude>*:*:zip:*</exclude>
             </excludes>
             <outputDirectory>/lib</outputDirectory>
         </dependencySet>
@@ -129,7 +129,7 @@
                 <!--
                  | exclude resources
                 -->
-                <exclude>com.sourcesense.solr:*:zip:*</exclude>
+                <exclude>*:*:zip:*</exclude>
             </excludes>
         </dependencySet>
     </dependencySets>
