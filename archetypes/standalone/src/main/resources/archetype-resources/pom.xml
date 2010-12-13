@@ -31,7 +31,7 @@
     </properties>
 
     <build>
-        <defaultGoal>install</defaultGoal>
+        <defaultGoal>package</defaultGoal>
 
         <pluginManagement>
             <plugins>
