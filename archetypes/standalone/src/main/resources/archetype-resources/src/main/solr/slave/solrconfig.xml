@@ -16,6 +16,8 @@
 -->
 <config>
 
+    <abortOnConfigurationError>${solr.abortOnConfigurationError}</abortOnConfigurationError>
+
     <updateHandler class="solr.DirectUpdateHandler2" />
 
     <requestDispatcher handleSelect="true" >
