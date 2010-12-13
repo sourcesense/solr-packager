@@ -30,7 +30,7 @@
     <requestHandler name="/update" class="solr.XmlUpdateRequestHandler" />
     <requestHandler name="/admin/" class="org.apache.solr.handler.admin.AdminHandlers" />
 
-    <requestHandler name="/replication" class="solr.ReplicationHandler" >
+    <requestHandler name="/replication" class="solr.ReplicationHandler">
         <lst name="master">
             <str name="enable">true</str>
             <str name="replicateAfter">startup</str>
