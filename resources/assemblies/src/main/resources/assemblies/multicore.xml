@@ -62,19 +62,19 @@
         </fileSet>
 
         <fileSet>
+            <directory>${basedir}/src/main/solr/</directory>
+            <outputDirectory>/solr</outputDirectory>
+            <filtered>true</filtered>
+        </fileSet>
+
+        <fileSet>
             <directory>${project.build.directory}/resources</directory>
-            <outputDirectory>/webapps/ROOT/WEB-INF/classes</outputDirectory>
+            <outputDirectory>/solr</outputDirectory>
             <excludes>
                 <exclude>**/solr-commons/</exclude>
                 <exclude>**/solr-webapp/</exclude>
                 <exclude>**/tomcat/</exclude>
             </excludes>
-        </fileSet>
-
-        <fileSet>
-            <directory>${basedir}/src/main/solr/</directory>
-            <outputDirectory>/webapps/ROOT/WEB-INF/classes</outputDirectory>
-            <filtered>true</filtered>
         </fileSet>
     </fileSets>
 
