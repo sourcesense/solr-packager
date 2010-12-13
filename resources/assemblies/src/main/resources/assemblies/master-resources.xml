@@ -29,8 +29,8 @@
     <files>
         <file>
             <source>${basedir}/src/main/solr/master/solrconfig.xml</source>
-            <filtered>true</filtered>
             <outputDirectory>/conf</outputDirectory>
+            <filtered>true</filtered>
         </file>
     </files>
 
@@ -38,6 +38,7 @@
         <fileSet>
             <directory>${basedir}/src/main/solr/commons</directory>
             <outputDirectory>/conf</outputDirectory>
+            <filtered>true</filtered>
         </fileSet>
     </fileSets>
 
