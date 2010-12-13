@@ -92,7 +92,6 @@
                         </goals>
                         <configuration>
                             <outputDirectory>${project.build.directory}/resources</outputDirectory>
-                            <includeGroupIds>com.sourcesense.solr</includeGroupIds>
                             <includeTypes>zip</includeTypes>
                             <excludeTransitive>true</excludeTransitive>
                         </configuration>
