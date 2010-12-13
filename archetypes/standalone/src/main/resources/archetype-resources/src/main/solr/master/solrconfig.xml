@@ -18,6 +18,8 @@
 
     <abortOnConfigurationError>${solr.abortOnConfigurationError}</abortOnConfigurationError>
 
+    <dataDir>${solr.data.dir.master}</dataDir>
+
     <updateHandler class="solr.DirectUpdateHandler2" />
 
     <requestDispatcher handleSelect="true" >
