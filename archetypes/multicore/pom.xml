@@ -25,7 +25,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <artifactId>solr-multicore-archetype</artifactId>
-    <name>Solr Packager :: Resources :: Solr Multicore Archetype</name>
+    <name>Solr Packager :: Archetypes :: Multicore</name>
     <packaging>jar</packaging>
 
 </project>
