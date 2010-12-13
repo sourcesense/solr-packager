@@ -111,19 +111,17 @@
             </properties>
 
             <build>
-                <pluginManagement>
-                    <plugins>
-                        <plugin>
-                            <artifactId>maven-assembly-plugin</artifactId>
-                            <configuration>
-                                <filters>
-                                    <filter>src/main/filters/prod.properties</filter>
-                                    <filter>src/main/filters/dev.properties</filter>
-                                </filters>
-                            </configuration>
-                        </plugin>
-                    </plugins>
-                </pluginManagement>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <configuration>
+                            <filters>
+                                <filter>src/main/filters/prod.properties</filter>
+                                <filter>src/main/filters/dev.properties</filter>
+                            </filters>
+                        </configuration>
+                    </plugin>
+                </plugins>
             </build>
         </profile>
 
@@ -135,19 +133,17 @@
             </properties>
 
             <build>
-                <pluginManagement>
-                    <plugins>
-                        <plugin>
-                            <artifactId>maven-assembly-plugin</artifactId>
-                            <configuration>
-                                <filters>
-                                    <filter>src/main/filters/prod.properties</filter>
-                                    <filter>src/main/filters/staging.properties</filter>
-                                </filters>
-                            </configuration>
-                        </plugin>
-                    </plugins>
-                </pluginManagement>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <configuration>
+                            <filters>
+                                <filter>src/main/filters/prod.properties</filter>
+                                <filter>src/main/filters/staging.properties</filter>
+                            </filters>
+                        </configuration>
+                    </plugin>
+                </plugins>
             </build>
         </profile>
 
@@ -159,19 +155,17 @@
             </properties>
 
             <build>
-                <pluginManagement>
-                    <plugins>
-                        <plugin>
-                            <artifactId>maven-assembly-plugin</artifactId>
-                            <configuration>
-                                <filters>
-                                    <filter>src/main/filters/prod.properties</filter>
-                                    <filter>src/main/filters/testing.properties</filter>
-                                </filters>
-                            </configuration>
-                        </plugin>
-                    </plugins>
-                </pluginManagement>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <configuration>
+                            <filters>
+                                <filter>src/main/filters/prod.properties</filter>
+                                <filter>src/main/filters/testing.properties</filter>
+                            </filters>
+                        </configuration>
+                    </plugin>
+                </plugins>
             </build>
         </profile>
 
@@ -183,18 +177,16 @@
             </properties>
 
             <build>
-                <pluginManagement>
-                    <plugins>
-                        <plugin>
-                            <artifactId>maven-assembly-plugin</artifactId>
-                            <configuration>
-                                <filters>
-                                    <filter>src/main/filters/prod.properties</filter>
-                                </filters>
-                            </configuration>
-                        </plugin>
-                    </plugins>
-                </pluginManagement>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <configuration>
+                            <filters>
+                                <filter>src/main/filters/prod.properties</filter>
+                            </filters>
+                        </configuration>
+                    </plugin>
+                </plugins>
             </build>
         </profile>
     </profiles>
