@@ -26,17 +26,15 @@
         <format>zip</format>
     </formats>
 
-    <files>
-        <file>
-            <source>${basedir}/src/main/solr/master/solrconfig.xml</source>
-            <outputDirectory>/conf</outputDirectory>
-            <filtered>true</filtered>
-        </file>
-    </files>
-
     <fileSets>
         <fileSet>
             <directory>${basedir}/src/main/solr/commons</directory>
+            <outputDirectory>/conf</outputDirectory>
+            <filtered>true</filtered>
+        </fileSet>
+
+        <fileSet>
+            <directory>${basedir}/src/main/solr/master</directory>
             <outputDirectory>/conf</outputDirectory>
             <filtered>true</filtered>
         </fileSet>

@@ -73,7 +73,7 @@
         </fileSet>
 
         <fileSet>
-            <directory>${basedir}/src/main/solr/master</directory>
+            <directory>${basedir}/src/main/solr/slave</directory>
             <outputDirectory>/webapps/ROOT/WEB-INF/classes</outputDirectory>
             <filtered>true</filtered>
         </fileSet>
