@@ -104,7 +104,7 @@
                 <!--
                  | exclude resources
                 -->
-                <exclude>${project.groupId}:*:zip:*</exclude>
+                <exclude>com.sourcesense.solr:*:zip:*</exclude>
             </excludes>
             <outputDirectory>/lib</outputDirectory>
         </dependencySet>
@@ -125,6 +125,12 @@
             <useProjectArtifact>false</useProjectArtifact>
             <scope>runtime</scope>
             <outputDirectory>/webapps/ROOT/WEB-INF/lib</outputDirectory>
+            <excludes>
+                <!--
+                 | exclude resources
+                -->
+                <exclude>com.sourcesense.solr:*:zip:*</exclude>
+            </excludes>
         </dependencySet>
     </dependencySets>
 

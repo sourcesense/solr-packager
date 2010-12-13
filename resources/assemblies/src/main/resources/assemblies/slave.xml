@@ -87,9 +87,12 @@
     </files>
 
     <!--
-     | Copy all project Tomcat dependencies
+     | Copy all project dependencies
     -->
     <dependencySets>
+        <!--
+         | Tomcat dependencies
+        -->
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
             <scope>provided</scope>
@@ -101,7 +104,7 @@
                 <!--
                  | exclude resources
                 -->
-                <exclude>${project.groupId}:*:zip:*</exclude>
+                <exclude>com.sourcesense.solr:*:zip:*</exclude>
             </excludes>
             <outputDirectory>/lib</outputDirectory>
         </dependencySet>
@@ -113,6 +116,21 @@
                 <include>org.apache.tomcat:juli:*</include>
             </includes>
             <outputDirectory>/bin</outputDirectory>
+        </dependencySet>
+
+        <!--
+         | Project dependencies
+        -->
+        <dependencySet>
+            <useProjectArtifact>false</useProjectArtifact>
+            <scope>runtime</scope>
+            <outputDirectory>/webapps/ROOT/WEB-INF/lib</outputDirectory>
+            <excludes>
+                <!--
+                 | exclude resources
+                -->
+                <exclude>com.sourcesense.solr:*:zip:*</exclude>
+            </excludes>
         </dependencySet>
     </dependencySets>
 
