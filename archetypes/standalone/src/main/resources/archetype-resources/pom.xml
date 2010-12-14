@@ -203,7 +203,7 @@
 
     <dependencies>
         <!--
-          | Resources dependencies
+         | Resources dependencies
         -->
         <dependency>
             <groupId>com.sourcesense.solr</groupId>
@@ -233,7 +233,7 @@
         </dependency>
 
         <!--
-          | Tomcat dependencies
+         | Tomcat dependencies
          -->
         <dependency>
             <groupId>org.apache.tomcat</groupId>
@@ -264,7 +264,7 @@
         </dependency>
 
         <!--
-          | Solr Dependencies
+         | Solr Dependencies
         -->
         <dependency>
             <groupId>org.apache.solr</groupId>
@@ -295,9 +295,9 @@
         </dependency>
 
         <!--
-          | Custom Solr plugins
-          | Add here 3rd part plugins and scope them with `runtime`
-          |
+         | Custom Solr plugins
+         | Add here 3rd part plugins and scope them with `runtime`
+         |
         <dependency>
             <groupId>${groupId}</groupId>
             <artifactId>${groupId}</artifactId>
@@ -307,7 +307,7 @@
         -->
 
         <!--
-          | Missing slf4j stuff
+         | Missing slf4j stuff
         -->
         <dependency>
             <groupId>org.slf4j</groupId>
