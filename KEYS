@@ -1,0 +1,58 @@
+This file contains the GPG keys of Sourcesense developers.
+Please don't use them for email unless you have to.
+Their main purpose is code signing.
+
+Users:
+    gpg --import KEYS
+
+Sourcesense Developers:
+    (gpg --list-sigs <your name> && gpg --armor --export <your name>) >> KEYS.
+
+************************************************************************************************************
+pub   1024D/CCE57663 2010-02-20
+uid                  Simone Tripodi (Simo) <s.tripodi@sourcesense.com>
+sig 3        CCE57663 2010-02-20  Simone Tripodi (Simo) <s.tripodi@sourcesense.com>
+sub   4096g/3D69964A 2010-02-20
+sig          CCE57663 2010-02-20  Simone Tripodi (Simo) <s.tripodi@sourcesense.com>
+
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: GnuPG v1.4.10 (Darwin)
+
+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
+0WDM1Hk=
+=/BS1
+-----END PGP PUBLIC KEY BLOCK-----
