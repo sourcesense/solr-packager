@@ -190,7 +190,7 @@
 
     <dependencies>
         <!--
-          | Resources dependencies
+         | Resources dependencies
         -->
         <dependency>
             <groupId>com.sourcesense.solr</groupId>
@@ -220,7 +220,7 @@
         </dependency>
 
         <!--
-          | Tomcat dependencies
+         | Tomcat dependencies
          -->
         <dependency>
             <groupId>org.apache.tomcat</groupId>
@@ -251,7 +251,7 @@
         </dependency>
 
         <!--
-          | Solr Dependencies
+         | Solr Dependencies
         -->
         <dependency>
             <groupId>org.apache.solr</groupId>
@@ -304,7 +304,7 @@
         -->
 
         <!--
-          | Missing slf4j stuff
+         | Missing slf4j stuff
         -->
         <dependency>
             <groupId>org.slf4j</groupId>
