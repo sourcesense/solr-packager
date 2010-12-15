@@ -167,6 +167,9 @@
 
     <fields>
         <field name="id" type="string" indexed="true" stored="true" multiValued="false" required="true" />
+        <!--
+         | add here your fields
+        -->
         <dynamicField name="*" type="ignored" />
     </fields>
 
@@ -183,6 +186,6 @@
     <!--
      | SolrQueryParser configuration: defaultOperator="AND|OR"
     -->
-    <solrQueryParser defaultOperator="OR"/>
+    <solrQueryParser defaultOperator="OR" />
 
 </schema>
