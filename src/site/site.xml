@@ -33,6 +33,7 @@
 
         <menu name="External Links">
             <item name="Apache Solr" href="http://lucene.apache.org/solr/" />
+            <item name="Apache Tomcat" href="http://tomcat.apache.org/" />
             <item name="Apache Maven" href="http://maven.apache.org/" />
             <item name="Project Page" href="https://github.com/sourcesense/solr-packager" />
         </menu>
