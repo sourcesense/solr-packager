@@ -38,6 +38,11 @@
         </license>
     </licenses>
 
+    <issueManagement>
+        <system>GitHub Issue tracker</system>
+        <url>https://github.com/sourcesense/solr-packager/issues</url>
+    </issueManagement>
+
     <scm>
         <url>git@github.com:sourcesense/solr-packager.git</url>
         <connection>scm:git::git@github.com:sourcesense/solr-packager.git</connection>
