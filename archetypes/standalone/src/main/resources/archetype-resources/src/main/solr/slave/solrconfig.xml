@@ -33,7 +33,7 @@
     <requestHandler name="/replication" class="solr.ReplicationHandler">
         <lst name="slave">
             <str name="enable">true</str>
-            <str name="masterUrl">${solr.slave.masterUrl}</str>
+            <str name="masterUrl">http://${solr.slave.masterHost}:${tomcat.connector.port}/replication</str>
             <str name="pollInterval">00:00:60</str>
         </lst>
     </requestHandler>
