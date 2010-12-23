@@ -44,9 +44,9 @@
     </issueManagement>
 
     <scm>
-        <url>git@github.com:sourcesense/solr-packager.git</url>
-        <connection>scm:git::git@github.com:sourcesense/solr-packager.git</connection>
-        <developerConnection>scm:git::git@github.com:sourcesense/solr-packager.git</developerConnection>
+        <url>http://github.com/sourcesense/solr-packager</url>
+        <connection>scm:git:ssh://github.com/sourcesense/solr-packager.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/sourcesense/solr-packager.git</developerConnection>
     </scm>
 
     <build>
