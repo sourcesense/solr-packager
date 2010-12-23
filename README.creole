@@ -1,0 +1,1 @@
+**solr-packager** documentation can be found on [[http://sourcesense.github.com/solr-packager/]]
