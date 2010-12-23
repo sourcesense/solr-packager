@@ -76,6 +76,7 @@
     <modules>
         <module>resources</module>
         <module>archetypes</module>
+        <module>site</module>
     </modules>
 
 </project>
