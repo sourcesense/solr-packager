@@ -1,7 +1,7 @@
                                     ------
                                     Home
                                     ------
-                                    The solr-packager Team
+                                    The Solr Packager Team
                                     ------
                                      2010
 
@@ -21,7 +21,7 @@
 ~~   limitations under the License.
 ~~
 
-Welcome to solr-packager!!!
+Welcome to Solr Packager!!!
 
   <Solr Packager> is a small collection of <Apache Maven> archetypes to simplify
   the creation of <Apache Solr> standalone applications based on <Apache Tomcat>.
