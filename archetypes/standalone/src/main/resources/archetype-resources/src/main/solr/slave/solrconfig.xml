@@ -515,19 +515,6 @@
         </lst>
     </requestHandler>
 
-    #if ($replication = "master")
-    <requestHandler name="/replication" class="solr.ReplicationHandler">
-        <lst name="master">
-            <str name="enable">true</str>
-            <str name="replicateAfter">startup</str>
-            <str name="replicateAfter">commit</str>
-            <str name="replicateAfter">optimize</str>
-            <str name="confFiles">schema.xml</str>
-            <str name="confFiles">stopwords.txt</str>
-            <str name="commitReserveDuration">00:00:10</str>
-        </lst>
-    </requestHandler>
-    #else
     <requestHandler name="/replication" class="solr.ReplicationHandler">
         <lst name="slave">
             <str name="enable">true</str>
@@ -535,7 +522,6 @@
             <str name="pollInterval">00:00:60</str>
         </lst>
     </requestHandler>
-    #end
 
     <!--
      | DisMaxRequestHandler allows easy searching across multiple fields
