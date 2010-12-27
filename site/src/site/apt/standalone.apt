@@ -72,26 +72,22 @@ your.artifactId/
 └── src
     └── main
         ├── filters
-        │    └── your
-        │        └── groupid
-        │            ├── dev.properties
-        │            ├── prod.properties
-        │            ├── staging.properties
-        │            └── testing.properties
+        │    ├── dev.properties
+        │    ├── prod.properties
+        │    ├── staging.properties
+        │    └── testing.properties
         └── solr
-            └── your
-                └── groupid
-                    ├── commons
-                    │    ├── data-config.xml
-                    │    ├── dataimport.properties
-                    │    ├── elevate.xml
-                    │    ├── protwords.txt
-                    │    ├── schema.xml
-                    │    ├── spellings.txt
-                    │    ├── stopwords.txt
-                    │    └── synonyms.txt
-                    ├── master
-                    │    └── solrconfig.xml
-                    └── slave
-                        └── solrconfig.xml
+            ├── commons
+            │    ├── data-config.xml
+            │    ├── dataimport.properties
+            │    ├── elevate.xml
+            │    ├── protwords.txt
+            │    ├── schema.xml
+            │    ├── spellings.txt
+            │    ├── stopwords.txt
+            │    └── synonyms.txt
+            ├── master
+            │    └── solrconfig.xml
+            └── slave
+                └── solrconfig.xml
 +--------------------------------------+
