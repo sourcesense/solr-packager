@@ -1,0 +1,97 @@
+                                    ------
+                                    Home
+                                    ------
+                                    The Solr Packager Team
+                                    ------
+                                     2010
+
+~~
+~~   Copyright 2010 Sourcesense
+~~
+~~   Licensed under the Apache License, Version 2.0 (the "License");
+~~   you may not use this file except in compliance with the License.
+~~   You may obtain a copy of the License at
+~~
+~~       http://www.apache.org/licenses/LICENSE-2.0
+~~
+~~   Unless required by applicable law or agreed to in writing, software
+~~   distributed under the License is distributed on an "AS IS" BASIS,
+~~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+~~   See the License for the specific language governing permissions and
+~~   limitations under the License.
+~~
+
+Create a new Solr Standalone archetype
+
+  The first step to do is creating the archetype, so just type:
+
++--------------------------------------+
+$ mvn archetype:generate \
+    -DgroupId=your.groupid \
+    -DartifactId=your.artifactId \
+    -Dversion=1.0-SNAPSHOT \
+    -DarchetypeArtifactId=solr-standalone-archetype \
+    -DarchetypeGroupId=com.sourcesense.solr \
+    -DarchetypeVersion=1.0.0
++--------------------------------------+
+
+  Otherwise, if you installed the archetypes in <<<~/.m2/archetype-catalog.xml>>>, just type
+
++--------------------------------------+
+$ mvn archetype:generate -DarchetypeCatalog=local
++--------------------------------------+
+
+  then, when prompting:
+
++--------------------------------------+
+Choose archetype:
+1: local -> solr-standalone-archetype (Solr Packager Standalone Archetype)
+2: local -> solr-multicore-archetype (Solr Packager Multicore Standalone Archetype)
+Choose a number: : 1
+Define value for property 'groupId': : your.groupid
+Define value for property 'artifactId': : your.artifactId
+Define value for property 'version':  1.0-SNAPSHOT: : 
+Define value for property 'package':  your.groupid: : 
+Confirm properties configuration:
+groupId: your.groupid
+artifactId: your.artifactId
+version: 1.0-SNAPSHOT
+package: your.groupid
+ Y: : Y
++--------------------------------------+
+
+  let's analyze deep inside the created structure
+
+Understanding the archetype
+
+  The generated archetype has the following structure:
+
++--------------------------------------+
+your.artifactId/
+├── pom.xml
+└── src
+    └── main
+        ├── filters
+        │    └── your
+        │        └── groupid
+        │            ├── dev.properties
+        │            ├── prod.properties
+        │            ├── staging.properties
+        │            └── testing.properties
+        └── solr
+            └── your
+                └── groupid
+                    ├── commons
+                    │    ├── data-config.xml
+                    │    ├── dataimport.properties
+                    │    ├── elevate.xml
+                    │    ├── protwords.txt
+                    │    ├── schema.xml
+                    │    ├── spellings.txt
+                    │    ├── stopwords.txt
+                    │    └── synonyms.txt
+                    ├── master
+                    │    └── solrconfig.xml
+                    └── slave
+                        └── solrconfig.xml
++--------------------------------------+
