@@ -27,6 +27,7 @@
     <body>
         <menu name="${project.name}">
             <item name="Home" href="index.html" />
+            <item name="Create a new Solr Standalone archetype" href="standalone.html" />
         </menu>
 
         <menu ref="reports" />
