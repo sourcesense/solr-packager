@@ -20,12 +20,6 @@
         xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd"
         name="solr-standalone" partial="true">
 
-    <requiredProperties>
-            <requiredProperty key="solrp.archetype.version">
-                <defaultValue>${project.version}</defaultValue>
-            </requiredProperty>
-    </requiredProperties>
-
     <fileSets>
         <fileSet filtered="true">
             <directory></directory>
