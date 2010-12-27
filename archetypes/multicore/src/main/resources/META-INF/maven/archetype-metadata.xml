@@ -28,11 +28,11 @@
             </includes>
         </fileSet>
 
-        <fileSet filtered="false" packaged="true" encoding="UTF-8">
+        <fileSet filtered="false" packaged="false" encoding="UTF-8">
             <directory>src/main/filters</directory>
         </fileSet>
 
-        <fileSet filtered="false" packaged="true" encoding="UTF-8">
+        <fileSet filtered="false" packaged="false" encoding="UTF-8">
             <directory>src/main/solr</directory>
         </fileSet>
     </fileSets>
