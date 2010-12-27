@@ -23,5 +23,58 @@
 
 Welcome to solr-packager!!!
 
-  solr-packager is a small collection of <Apache Maven> archetypes to simplify
+  <Solr Packager> is a small collection of <Apache Maven> archetypes to simplify
   the creation of <Apache Solr> standalone applications based on <Apache Tomcat>.
+
+  <<Why>>? Simply because we adore the KISS principle, <keep it simple and straightforward>, so just with a small
+  <Apache Maven> magic we can easy include the <Apache Solr> application life cycle and deploy in your build
+  management.
+
+Installation
+
+  Users have not to install <Solr Packager>, just use it inside the <Maven Archetype>!
+
+  There's by the way an optional step to install the archetype, updating your local catalog,
+  typically <<<~/.m2/archetype-catalog.xml>>>:
+
++--------------------------------------+
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-catalog>
+    <archetypes>
+        <archetype>
+            <groupId>com.sourcesense.solr</groupId>
+            <artifactId>solr-standalone-archetype</artifactId>
+            <version>1.0.0</version>
+            <description>Solr Packager Standalone Archetype</description>
+        </archetype>
+        <archetype>
+            <groupId>com.sourcesense.solr</groupId>
+            <artifactId>solr-multicore-archetype</artifactId>
+            <version>1.0.0</version>
+            <description>Solr Packager Multicore Standalone Archetype</description>
+        </archetype>
+    </archetypes>
+</archetype-catalog>
++--------------------------------------+
+
+  So when launching <<<mvn archetype:generate -DarchetypeCatalog=local>>> on shell, users can select the archetype:
+
++--------------------------------------+
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Stub Project (No POM) 1
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] >>> maven-archetype-plugin:2.0:generate (default-cli) @ standalone-pom >>>
+[INFO]
+[INFO] <<< maven-archetype-plugin:2.0:generate (default-cli) @ standalone-pom <<<
+[INFO]
+[INFO] --- maven-archetype-plugin:2.0:generate (default-cli) @ standalone-pom ---
+[INFO] Generating project in Interactive mode
+[INFO] No archetype defined. Using maven-archetype-quickstart (org.apache.maven.archetypes:maven-archetype-quickstart:1.0)
+Choose archetype:
+1: local -> solr-standalone-archetype (Solr Packager Standalone Archetype)
+2: local -> solr-multicore-archetype (Solr Packager Multicore Standalone Archetype)
+Choose a number: : 
++--------------------------------------+
