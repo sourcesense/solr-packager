@@ -65,11 +65,4 @@
         </pluginManagement>
     </build>
 
-    <modules>
-        <module>assemblies</module>
-        <module>tomcat-resources</module>
-        <module>solr-commons</module>
-        <module>solr-webapp</module>
-    </modules>
-
 </project>
