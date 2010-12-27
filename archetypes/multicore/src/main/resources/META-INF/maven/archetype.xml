@@ -23,7 +23,7 @@
     <allowPartial>true</allowPartial>
 
     <resources>
-        <resource>pom.xml</resource>
+        <resource filtered="true">pom.xml</resource>
 
         <!--
          | filters
