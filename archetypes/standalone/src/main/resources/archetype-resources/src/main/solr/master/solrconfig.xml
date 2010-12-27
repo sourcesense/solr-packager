@@ -744,7 +744,7 @@
      |    java -Dsolr.clustering.enabled=true -jar start.jar
     -->
     <searchComponent name="clusteringComponent"
-            enable="${solr.clustering.enabled:false}"
+            enable="${solr.clustering.enabled}"
             class="org.apache.solr.handler.clustering.ClusteringComponent">
         <!--
          | Declare an engine
@@ -777,7 +777,7 @@
     </searchComponent>
 
     <requestHandler name="/clustering"
-              enable="${solr.clustering.enabled:false}"
+              enable="${solr.clustering.enabled}"
               class="solr.SearchHandler">
         <lst name="defaults">
             <bool name="clustering">true</bool>
