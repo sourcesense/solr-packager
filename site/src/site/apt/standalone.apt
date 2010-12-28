@@ -91,3 +91,85 @@ your.artifactId/
             └── slave
                 └── solrconfig.xml
 +--------------------------------------+
+
+  When packaging <Apache Solr>, the <Solr Packager> is able to build a <<master>> and related <<slave>>, for different
+  target environment, identified in the profiles (see <<<your.artifactId/src/main/filters/>>>):
+
+  * development;
+  * testing;
+  * staging;
+  * production.
+
+  Let's analyze the <<<your.artifactId/src/main/solr>>> tree:
+
++--------------------------------------+
+your.artifactId/
+├── pom.xml
+└── src
+    └── main
+        └── solr
+            ├── commons
+            │    ├── data-config.xml
+            │    ├── dataimport.properties
+            │    ├── elevate.xml
+            │    ├── protwords.txt
+            │    ├── schema.xml
+            │    ├── spellings.txt
+            │    ├── stopwords.txt
+            │    └── synonyms.txt
+            ├── master
+            │    └── solrconfig.xml
+            └── slave
+                └── solrconfig.xml
++--------------------------------------+
+
+  * the <<<commons>>> branch contains all shared files between <<master>> and <<slave>> configuration, users can safely
+    move them between directories as they wish; <<<commons>>> contains a <<<schema>>> and other <Solr> stuff as <stub>,
+    that means that users have not to use them directly.
+  * the <<<master>>> branch contains all <<master>> configuration files;
+  * the <<<slave>>> branch contains all <<slave>> configuration files.
+
+  <<NOTE>>: all files are <filtered> when packaging the applications, that means that users can define placeholders in
+  the configuration files and define their values in the filters, depending on the target environment.
+
+Packaging and Run
+
+  We're now ready to package our <Apache Solr> based application: open the shell, go to the new generated archetype
+  location and run
+
++--------------------------------------+
+$ mvn -P(dev|testing|staging|prod) package
++--------------------------------------+
+
+  three important artifacts will be generated (last postfix depends on which profile were enabled)
+
++--------------------------------------+
+target/
+├── your.artifactId-1.0-SNAPSHOT-master-(dev|testing|staging|prod).zip
+├── your.artifactId-1.0-SNAPSHOT-master-resources-(dev|testing|staging|prod).zip
+└── your.artifactId-1.0-SNAPSHOT-slave-(dev|testing|staging|prod).zip
++--------------------------------------+
+
+  the <<<your.artifactId-1.0-SNAPSHOT-master-${profile}.zip>>> and
+  <<<your.artifactId-1.0-SNAPSHOT-slave-${profile}.zip>>> are a standalone <Tomcat> based <Solr> applications; let's
+  unzip for example the first one
+
++--------------------------------------+
+$ cd target
+$ unzip your.artifactId-1.0-SNAPSHOT-master-${profile}.zip
++--------------------------------------+
+
+  we can now execute the <Tomcat>-based <Solr> instance:
+
++--------------------------------------+
+$ cd your.artifactId-1.0-SNAPSHOT-master-${profile}
+$ ./bin/catalina.(sh|bat)
++--------------------------------------+
+
+  now open your preferred browser on go to
+
++--------------------------------------+
+http://localhost:8080/admin/
++--------------------------------------+
+
+  if you can see the <Apache Solr> admin interface, your <Solr> instance is up and running! :)
