@@ -150,8 +150,8 @@ target/
 └── your.artifactId-1.0-SNAPSHOT-slave-(dev|testing|staging|prod).zip
 +--------------------------------------+
 
-  the <<<your.artifactId-1.0-SNAPSHOT-master-${profile}.zip>>> and
-  <<<your.artifactId-1.0-SNAPSHOT-slave-${profile}.zip>>> are a standalone <Tomcat> based <Solr> applications; let's
+  the <<<your.artifactId-1.0-SNAPSHOT-master-$\{profile\}.zip>>> and
+  <<<your.artifactId-1.0-SNAPSHOT-slave-$\{profile\}.zip>>> are a standalone <Tomcat> based <Solr> applications; let's
   unzip for example the first one
 
 +--------------------------------------+
