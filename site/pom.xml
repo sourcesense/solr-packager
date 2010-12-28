@@ -30,6 +30,7 @@
 
     <distributionManagement>
         <site>
+            <id>github</id>
             <url>gitsite:git@github.com/sourcesense/solr-packager.git</url>
         </site>
     </distributionManagement>
