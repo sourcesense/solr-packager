@@ -26,7 +26,7 @@ Introduction
   In this section we will see how to create a <multicore Solr> embedded in <Apache Tomcat>.
 
   What we suggest is managing each single core as a single <Maven> module as we raw in the
-  {{{standalone.html}previous section}}, then using this new <<<archetype>>> to aggregate all together in a single
+  {{{standalone.html}previous chapter}}, then using this new <<<archetype>>> to aggregate all together in a single
   <multicore> instance.
 
 Getting started
@@ -71,3 +71,87 @@ package: your.groupid
   let's analyze deep inside the created structure
 
 Understanding the archetype
+
+  The generated archetype has the following structure:
+
++--------------------------------------+
+your.multicore.artifactId/
+├── pom.xml
+└── src
+    └── main
+        ├── filters
+        │     ├── dev.properties
+        │     ├── prod.properties
+        │     ├── staging.properties
+        │     └── testing.properties
+        └── solr
+            └── solr.xml
++--------------------------------------+
+
+  The <<<filters>>> approach is the same as we adopted in the {{{standalone.html}previous chapter}}, so nothing to add
+  in this section.
+
+  Let's suppose we want to include the <<<your.groupid:your.artifactId:1.0-SNAPSHOT>>> <Solr Core> in our new
+  <multicore> artifact; first of all, let's add the dependency in the <<<pom.xml>>> (don't forget to install, first!)
+
++--------------------------------------+
+...
+    <dependency>
+        <groupId>your.groupid</groupId>
+        <artifactId>your.artifactId</artifactId>
+        <version>1.0-SNAPSHOT</version>
+         <!--
+          | This is the mysterious artifact we raw in the previous section
+         -->
+        <classifier>master-resources-${environment}</classifier>
+        <type>zip</type>
+        <scope>provided</scope>
+    </dependency>
+...
++--------------------------------------+
+
+  then, add the core in the <<<solr.xml>>>
+
++--------------------------------------+
+<solr persistent="true">
+    <cores adminPath="/admin/cores">
+        <core name="your.artifactId" instanceDir="your.artifactId" />
+    </cores>
+</solr>
++--------------------------------------+
+
+  We're now ready to package our <Apache Solr> based application: open the shell, go to the new generated archetype
+  location and run
+
++--------------------------------------+
+$ mvn -P(dev|testing|staging|prod) package
++--------------------------------------+
+
+  the artifact of our interested is generated under <<<target>>> dir (last postfix depends on which profile were enabled)
+
++--------------------------------------+
+target/
+├── your.multicore.artifactId-1.0-SNAPSHOT-multicore-(dev|testing|staging|prod).zip
++--------------------------------------+
+
+  Let's unzip it
+
++--------------------------------------+
+$ cd target
+$ unzip your.multicore.artifactId-1.0-SNAPSHOT-multicore-${profile}.zip
++--------------------------------------+
+
+  we can now execute the <Tomcat>-based <Solr> instance:
+
++--------------------------------------+
+$ cd your.multicore.artifactId-1.0-SNAPSHOT-multicore-${profile}
+$ ./bin/catalina.(sh|bat) (run|start)
++--------------------------------------+
+
+  now open your preferred browser on go to
+
++--------------------------------------+
+http://localhost:8080/
++--------------------------------------+
+
+  if you can see the <Apache Solr> admin list, your <Solr> instance is up and running! :)
