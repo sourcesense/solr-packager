@@ -14,7 +14,7 @@
  |  See the License for the specific language governing permissions and
  |  limitations under the License.
 -->
-<solr persistent="true" sharedLib="lib">
+<solr persistent="true">
     <cores adminPath="/admin/cores">
         <core name="core01" instanceDir="core01" />
         <core name="core02" instanceDir="core02" />
