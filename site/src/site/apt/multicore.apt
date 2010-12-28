@@ -24,3 +24,50 @@
 Introduction
 
   In this section we will see how to create a <multicore Solr> embedded in <Apache Tomcat>.
+
+  What we suggest is managing each single core as a single <Maven> module as we raw in the
+  {{{standalone.html}previous section}}, then using this new <<<archetype>>> to aggregate all together in a single
+  <multicore> instance.
+
+Getting started
+
+  The first step to do is creating the archetype, so just type:
+
++--------------------------------------+
+$ mvn archetype:generate \
+    -DgroupId=your.groupid \
+    -DartifactId=your.multicore.artifactId \
+    -Dversion=1.0-SNAPSHOT \
+    -DarchetypeArtifactId=solr-multicore-archetype \
+    -DarchetypeGroupId=com.sourcesense.solr \
+    -DarchetypeVersion=1.0.0
++--------------------------------------+
+
+  Otherwise, if you installed the archetypes in <<<~/.m2/archetype-catalog.xml>>>, just type
+
++--------------------------------------+
+$ mvn archetype:generate -DarchetypeCatalog=local
++--------------------------------------+
+
+  then, when prompting:
+
++--------------------------------------+
+Choose archetype:
+1: local -> solr-standalone-archetype (Solr Packager Standalone Archetype)
+2: local -> solr-multicore-archetype (Solr Packager Multicore Standalone Archetype)
+Choose a number: : 2
+Define value for property 'groupId': : your.groupid
+Define value for property 'artifactId': : your.multicore.artifactId
+Define value for property 'version':  1.0-SNAPSHOT: : 
+Define value for property 'package':  your.groupid: : 
+Confirm properties configuration:
+groupId: your.groupid
+artifactId: your.multicore.artifactId
+version: 1.0-SNAPSHOT
+package: your.groupid
+ Y: : Y
++--------------------------------------+
+
+  let's analyze deep inside the created structure
+
+Understanding the archetype
