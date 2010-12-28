@@ -21,4 +21,6 @@
 ~~   limitations under the License.
 ~~
 
+Introduction
 
+  In this section we will see how to create a <multicore Solr> embedded in <Apache Tomcat>.
