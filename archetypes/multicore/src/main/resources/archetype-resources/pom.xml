@@ -126,7 +126,7 @@
             <id>staging</id>
 
             <properties>
-                <environment>migration</environment>
+                <environment>staging</environment>
             </properties>
 
             <build>
