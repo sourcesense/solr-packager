@@ -850,13 +850,10 @@
      | a search component that enables you to configure the top results for
      | a given query regardless of the normal lucene scoring.
     -->
-    <searchComponent name="elevator" class="solr.QueryElevationComponent" >
-        <!--
-         | pick a fieldType to analyze queries
-        -->
+    <!-- <searchComponent name="elevator" class="solr.QueryElevationComponent">
         <str name="queryFieldType">string</str>
         <str name="config-file">elevate.xml</str>
-    </searchComponent>
+    </searchComponent> -->
 
     <!--
      | a request handler utilizing the elevator component
