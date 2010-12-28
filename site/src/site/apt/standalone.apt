@@ -163,7 +163,7 @@ $ unzip your.artifactId-1.0-SNAPSHOT-master-${profile}.zip
 
 +--------------------------------------+
 $ cd your.artifactId-1.0-SNAPSHOT-master-${profile}
-$ ./bin/catalina.(sh|bat)
+$ ./bin/catalina.(sh|bat) (run|start)
 +--------------------------------------+
 
   now open your preferred browser on go to
