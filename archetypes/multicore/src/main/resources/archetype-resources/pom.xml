@@ -113,8 +113,8 @@
                         <artifactId>maven-assembly-plugin</artifactId>
                         <configuration>
                             <filters>
-                                <filter>src/main/filters/prod.properties</filter>
-                                <filter>src/main/filters/dev.properties</filter>
+                                <filter>${basedir}/src/main/filters/prod.properties</filter>
+                                <filter>${basedir}/src/main/filters/dev.properties</filter>
                             </filters>
                         </configuration>
                     </plugin>
@@ -135,8 +135,8 @@
                         <artifactId>maven-assembly-plugin</artifactId>
                         <configuration>
                             <filters>
-                                <filter>src/main/filters/prod.properties</filter>
-                                <filter>src/main/filters/staging.properties</filter>
+                                <filter>${basedir}/src/main/filters/prod.properties</filter>
+                                <filter>${basedir}/src/main/filters/staging.properties</filter>
                             </filters>
                         </configuration>
                     </plugin>
@@ -157,8 +157,8 @@
                         <artifactId>maven-assembly-plugin</artifactId>
                         <configuration>
                             <filters>
-                                <filter>src/main/filters/prod.properties</filter>
-                                <filter>src/main/filters/testing.properties</filter>
+                                <filter>${basedir}/src/main/filters/prod.properties</filter>
+                                <filter>${basedir}/src/main/filters/testing.properties</filter>
                             </filters>
                         </configuration>
                     </plugin>
@@ -179,7 +179,7 @@
                         <artifactId>maven-assembly-plugin</artifactId>
                         <configuration>
                             <filters>
-                                <filter>src/main/filters/prod.properties</filter>
+                                <filter>${basedir}/src/main/filters/prod.properties</filter>
                             </filters>
                         </configuration>
                     </plugin>
