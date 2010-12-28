@@ -151,8 +151,11 @@ target/
 +--------------------------------------+
 
   the <<<your.artifactId-1.0-SNAPSHOT-master-$\{profile\}.zip>>> and
-  <<<your.artifactId-1.0-SNAPSHOT-slave-$\{profile\}.zip>>> are a standalone <Tomcat> based <Solr> applications; let's
-  unzip for example the first one
+  <<<your.artifactId-1.0-SNAPSHOT-slave-$\{profile\}.zip>>> are a standalone <Tomcat> based <Solr> applications.
+
+  The <<<your.artifactId-1.0-SNAPSHOT-master-resources-$\{profile\}.zip>>> artifact will be explained in the next chapter.
+
+  Let's unzip for example the first one
 
 +--------------------------------------+
 $ cd target
