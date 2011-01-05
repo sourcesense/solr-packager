@@ -26,8 +26,8 @@
             prettyPrint();
         }
     </script>
-          <meta name="author" content="The solr-packager Team" />
-        <meta name="Date-Revision-yyyymmdd" content="20101222" />
+          <meta name="author" content="Sourcesense - The Solr Packager Team" />
+        <meta name="Date-Revision-yyyymmdd" content="20110105" />
       </head>
   <body>
     <div id="wrapper">
@@ -51,7 +51,7 @@
   
     
             <div class="xleft">
-        <span id="publishDate">Last Published: 2010-12-22</span>
+        <span id="publishDate">Last Published: 2011-01-05</span>
                   &nbsp;| <span id="projectVersion">Version: 1.0.0-SNAPSHOT</span>
                       </div>
                 <div class="xright">      
@@ -83,13 +83,20 @@
     <li class="none">
               <strong>Home</strong>
         </li>
+              
+    <li class="none">
+                    <a href="standalone.html">Create a new Solr Standalone archetype</a>
+          </li>
+              
+    <li class="none">
+                    <a href="multicore.html">Create a new Solr MultiCore Standalone archetype</a>
+          </li>
           </ul>
               <h5>Project Documentation</h5>
             <ul>
               
                 
                           
-                  
                   
                   
                   
@@ -115,10 +122,6 @@
                   
     <li class="none">
                     <a href="dependencies.html">Dependencies</a>
-          </li>
-                  
-    <li class="none">
-                    <a href="distribution-management.html">Distribution Management</a>
           </li>
                   
     <li class="none">
@@ -194,7 +197,39 @@
         </div>
         <div id="bodyColumn">
           <div id="contentBox">
-            <!--  --><!-- Copyright 2010 Sourcesense --><!--  --><!-- Licensed under the Apache License, Version 2.0 (the "License"); --><!-- you may not use this file except in compliance with the License. --><!-- You may obtain a copy of the License at --><!--  --><!-- http://www.apache.org/licenses/LICENSE-2.0 --><!--  --><!-- Unless required by applicable law or agreed to in writing, software --><!-- distributed under the License is distributed on an "AS IS" BASIS, --><!-- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. --><!-- See the License for the specific language governing permissions and --><!-- limitations under the License. --><!--  --><div class="section"><h2>Welcome to solr-packager!!!<a name="Welcome_to_solr-packager"></a></h2><p>solr-packager is a small collection of <i>Apache Maven</i> archetypes to simplify the creation of <i>Apache Solr</i> standalone applications based on <i>Apache Tomcat</i>.</p></div>
+            <!--  --><!-- Copyright 2010 Sourcesense --><!--  --><!-- Licensed under the Apache License, Version 2.0 (the "License"); --><!-- you may not use this file except in compliance with the License. --><!-- You may obtain a copy of the License at --><!--  --><!-- http://www.apache.org/licenses/LICENSE-2.0 --><!--  --><!-- Unless required by applicable law or agreed to in writing, software --><!-- distributed under the License is distributed on an "AS IS" BASIS, --><!-- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. --><!-- See the License for the specific language governing permissions and --><!-- limitations under the License. --><!--  --><div class="section"><h2>Welcome to Solr Packager!!!<a name="Welcome_to_Solr_Packager"></a></h2><p><i>Solr Packager</i> is a small collection of <i>Apache Maven</i> archetypes to simplify the creation of <i>Apache Solr</i> standalone applications based on <i>Apache Tomcat</i>.</p><p><b>Why</b>? Simply because we adore the KISS principle, <i>keep it simple and straightforward</i>, so just with a small <i>Apache Maven</i> magic we can easy include the <i>Apache Solr</i> application life cycle and deploy in your build management.</p></div><div class="section"><h2>Installation<a name="Installation"></a></h2><p>Users have not to install <i>Solr Packager</i>, just use it inside the <i>Maven Archetype</i>!</p><p>There's by the way an optional step to install the archetype, updating your local catalog, typically <tt>~/.m2/archetype-catalog.xml</tt>:</p><div class="source"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;archetype-catalog&gt;
+    &lt;archetypes&gt;
+        &lt;archetype&gt;
+            &lt;groupId&gt;com.sourcesense.solr&lt;/groupId&gt;
+            &lt;artifactId&gt;solr-standalone-archetype&lt;/artifactId&gt;
+            &lt;version&gt;1.0.0&lt;/version&gt;
+            &lt;description&gt;Solr Packager Standalone Archetype&lt;/description&gt;
+        &lt;/archetype&gt;
+        &lt;archetype&gt;
+            &lt;groupId&gt;com.sourcesense.solr&lt;/groupId&gt;
+            &lt;artifactId&gt;solr-multicore-archetype&lt;/artifactId&gt;
+            &lt;version&gt;1.0.0&lt;/version&gt;
+            &lt;description&gt;Solr Packager Multicore Standalone Archetype&lt;/description&gt;
+        &lt;/archetype&gt;
+    &lt;/archetypes&gt;
+&lt;/archetype-catalog&gt;</pre></div><p>So when launching <tt>mvn archetype:generate -DarchetypeCatalog=local</tt> on shell, users can select the archetype:</p><div class="source"><pre>[INFO] Scanning for projects...
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Stub Project (No POM) 1
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] &gt;&gt;&gt; maven-archetype-plugin:2.0:generate (default-cli) @ standalone-pom &gt;&gt;&gt;
+[INFO]
+[INFO] &lt;&lt;&lt; maven-archetype-plugin:2.0:generate (default-cli) @ standalone-pom &lt;&lt;&lt;
+[INFO]
+[INFO] --- maven-archetype-plugin:2.0:generate (default-cli) @ standalone-pom ---
+[INFO] Generating project in Interactive mode
+[INFO] No archetype defined. Using maven-archetype-quickstart (org.apache.maven.archetypes:maven-archetype-quickstart:1.0)
+Choose archetype:
+1: local -&gt; solr-standalone-archetype (Solr Packager Standalone Archetype)
+2: local -&gt; solr-multicore-archetype (Solr Packager Multicore Standalone Archetype)
+Choose a number: : </pre></div></div>
           </div>
         </div>
         <div class="clear">
@@ -203,7 +238,7 @@
         <div id="footer">
           <div class="xright">Copyright &#169;          
    
-          2010
+          2011
     
                     <a href="http://www.sourcesense.com/">Sourcesense</a>.
             All Rights Reserved.    
