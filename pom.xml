@@ -26,7 +26,7 @@
     <groupId>com.sourcesense.solr</groupId>
     <artifactId>solr-packager</artifactId>
     <name>Solr Packager</name>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <description>Standalone Apache Solr embedded in Tomcat</description>
     <url>http://github.com/sourcesense/solr-packager</url>
