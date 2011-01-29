@@ -103,7 +103,7 @@
                             <goal>war</goal>
                         </goals>
                         <configuration>
-                            <classifier>master</classifier>
+                            <classifier>master-${environment}</classifier>
                             <webResources>
                                 <resource>
                                     <directory>${basedir}/src/main/solr/master</directory>
@@ -149,7 +149,7 @@
                             <goal>war</goal>
                         </goals>
                         <configuration>
-                            <classifier>slave</classifier>
+                            <classifier>slave-${environment}</classifier>
                             <webResources>
                                 <resource>
                                     <directory>${basedir}/src/main/solr/slave</directory>
