@@ -133,6 +133,7 @@
                                 <resource>
                                     <directory>${basedir}/src/main/solr/commons</directory>
                                     <targetPath>/WEB-INF/classes</targetPath>
+                                    <filtering>true</filtering>
                                 </resource>
 
                                 <resource>
@@ -180,6 +181,7 @@
                                 <resource>
                                     <directory>${basedir}/src/main/solr/commons</directory>
                                     <targetPath>/WEB-INF/classes</targetPath>
+                                    <filtering>true</filtering>
                                 </resource>
 
                                 <resource>
