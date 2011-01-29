@@ -29,6 +29,7 @@
             <item name="Home" href="index.html" />
             <item name="Create a new Solr Standalone archetype" href="standalone.html" />
             <item name="Create a new Solr MultiCore Standalone archetype" href="multicore.html" />
+            <item name="Archetype Catalog" href="archetype-catalog.xml" />
         </menu>
 
         <menu ref="reports" />
