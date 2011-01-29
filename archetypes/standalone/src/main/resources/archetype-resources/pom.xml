@@ -108,6 +108,7 @@
                                 <resource>
                                     <directory>${basedir}/src/main/solr/master</directory>
                                     <targetPath>/WEB-INF/classes</targetPath>
+                                    <filtering>true</filtering>
                                 </resource>
 
                                 <!--
@@ -154,6 +155,7 @@
                                 <resource>
                                     <directory>${basedir}/src/main/solr/slave</directory>
                                     <targetPath>/WEB-INF/classes</targetPath>
+                                    <filtering>true</filtering>
                                 </resource>
 
                                 <!--
