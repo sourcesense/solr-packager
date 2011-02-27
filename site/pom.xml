@@ -42,6 +42,22 @@
                 <artifactId>maven-project-info-reports-plugin</artifactId>
                 <version>2.3.1</version>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-changes-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <issueLinkTemplate>%URL%/%ISSUE%</issueLinkTemplate>
+                    <reportSets>
+                        <reportSet>
+                            <reports>
+                                <report>changes-report</report>
+                            </reports>
+                        </reportSet>
+                    </reportSets>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
