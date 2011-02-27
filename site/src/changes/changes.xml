@@ -25,11 +25,14 @@
 
     <body>
         <release version="1.0.1" date="TBD" description="Bugfix release">
+            <action type="fix" issue="1">
+                Conformed environment names: testing-&gt;test, staging-&gt;stage.
+            </action>
             <action type="update" issue="2">
                 Web application is a proper webapp managed by the war plugin.
             </action>
-            <action type="fix" issue="1">
-                Conformed environment names: testing-&gt;test, staging-&gt;stage.
+            <action type="add" issue="3">
+                Distribute the archetype-catalog.xml descriptor in the site.
             </action>
         </release>
 
