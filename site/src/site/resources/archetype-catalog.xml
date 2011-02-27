@@ -17,15 +17,15 @@
 <archetype-catalog>
     <archetypes>
         <archetype>
-            <groupId>${project.groupId}</groupId>
+            <groupId>com.sourcesense.solr</groupId>
             <artifactId>solr-standalone-archetype</artifactId>
-            <version>${project.version}</version>
+            <version>1.0.1</version>
             <description>Solr Packager Standalone Archetype</description>
         </archetype>
         <archetype>
-            <groupId>${project.groupId}</groupId>
+            <groupId>com.sourcesense.solr</groupId>
             <artifactId>solr-multicore-archetype</artifactId>
-            <version>${project.version}</version>
+            <version>1.0.1</version>
             <description>Solr Packager Multicore Standalone Archetype</description>
         </archetype>
     </archetypes>
