@@ -123,10 +123,10 @@
         </profile>
 
         <profile>
-            <id>staging</id>
+            <id>stage</id>
 
             <properties>
-                <environment>staging</environment>
+                <environment>stage</environment>
             </properties>
 
             <build>
@@ -136,7 +136,7 @@
                         <configuration>
                             <filters>
                                 <filter>${basedir}/src/main/filters/prod.properties</filter>
-                                <filter>${basedir}/src/main/filters/staging.properties</filter>
+                                <filter>${basedir}/src/main/filters/stage.properties</filter>
                             </filters>
                         </configuration>
                     </plugin>
@@ -158,7 +158,7 @@
                         <configuration>
                             <filters>
                                 <filter>${basedir}/src/main/filters/prod.properties</filter>
-                                <filter>${basedir}/src/main/filters/testing.properties</filter>
+                                <filter>${basedir}/src/main/filters/test.properties</filter>
                             </filters>
                         </configuration>
                     </plugin>

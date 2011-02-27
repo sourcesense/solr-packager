@@ -260,16 +260,16 @@
         </profile>
 
         <profile>
-            <id>staging</id>
+            <id>stage</id>
 
             <properties>
-                <environment>staging</environment>
+                <environment>stage</environment>
             </properties>
 
             <build>
                 <filters>
                     <filter>src/main/filters/prod.properties</filter>
-                    <filter>src/main/filters/staging.properties</filter>
+                    <filter>src/main/filters/stage.properties</filter>
                 </filters>
 
                 <plugins>
@@ -278,7 +278,7 @@
                         <configuration>
                             <filters>
                                 <filter>src/main/filters/prod.properties</filter>
-                                <filter>src/main/filters/staging.properties</filter>
+                                <filter>src/main/filters/stage.properties</filter>
                             </filters>
                         </configuration>
                     </plugin>
@@ -296,7 +296,7 @@
             <build>
                 <filters>
                     <filter>src/main/filters/prod.properties</filter>
-                    <filter>src/main/filters/testing.properties</filter>
+                    <filter>src/main/filters/test.properties</filter>
                 </filters>
 
                 <plugins>
@@ -305,7 +305,7 @@
                         <configuration>
                             <filters>
                                 <filter>src/main/filters/prod.properties</filter>
-                                <filter>src/main/filters/testing.properties</filter>
+                                <filter>src/main/filters/test.properties</filter>
                             </filters>
                         </configuration>
                     </plugin>
