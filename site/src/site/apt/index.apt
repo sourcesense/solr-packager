@@ -6,7 +6,7 @@
                                      2010
 
 ~~
-~~   Copyright 2010 Sourcesense
+~~   Copyright 2010-2011 Sourcesense
 ~~
 ~~   Licensed under the Apache License, Version 2.0 (the "License");
 ~~   you may not use this file except in compliance with the License.
@@ -32,32 +32,13 @@ Welcome to Solr Packager!!!
 
 Installation
 
-  Users have not to install <Solr Packager>, just use it inside the <Maven Archetype>!
-
-  There's by the way an optional step to install the archetype, updating your local catalog,
-  typically <<<~/.m2/archetype-catalog.xml>>>:
+  Users have not to install <Solr Packager>, just use it inside the <Maven Archetype> launching on shell:
 
 +--------------------------------------+
-<?xml version="1.0" encoding="UTF-8"?>
-<archetype-catalog>
-    <archetypes>
-        <archetype>
-            <groupId>com.sourcesense.solr</groupId>
-            <artifactId>solr-standalone-archetype</artifactId>
-            <version>1.0.0</version>
-            <description>Solr Packager Standalone Archetype</description>
-        </archetype>
-        <archetype>
-            <groupId>com.sourcesense.solr</groupId>
-            <artifactId>solr-multicore-archetype</artifactId>
-            <version>1.0.0</version>
-            <description>Solr Packager Multicore Standalone Archetype</description>
-        </archetype>
-    </archetypes>
-</archetype-catalog>
+<mvn archetype:generate -DarchetypeCatalog=http://sourcesense.github.com/solr-packager/archetype-catalog.xml
 +--------------------------------------+
 
-  So when launching <<<mvn archetype:generate -DarchetypeCatalog=local>>> on shell, users can select the archetype:
+  then users can select the archetype:
 
 +--------------------------------------+
 [INFO] Scanning for projects...
