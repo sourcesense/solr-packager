@@ -35,7 +35,7 @@ Installation
   Users have not to install <Solr Packager>, just use it inside the <Maven Archetype> launching on shell:
 
 +--------------------------------------+
-<mvn archetype:generate -DarchetypeCatalog=http://sourcesense.github.com/solr-packager/archetype-catalog.xml
+mvn archetype:generate -DarchetypeCatalog=http://sourcesense.github.com/solr-packager/archetype-catalog.xml
 +--------------------------------------+
 
   then users can select the archetype:
