@@ -26,7 +26,7 @@ Introduction
   In this section we will see how to create a <multicore Solr> embedded in <Apache Tomcat>.
 
   What we suggest is managing each single core as a single <Maven> module as we raw in the
-  {{{standalone.html}previous chapter}}, then using this new <<<archetype>>> to aggregate all together in a single
+  {{{./standalone.html}previous chapter}}, then using this new <<<archetype>>> to aggregate all together in a single
   <multicore> instance.
 
 Getting started
@@ -88,7 +88,7 @@ your.multicore.artifactId/
             └── solr.xml
 +--------------------------------------+
 
-  The <<<filters>>> approach is the same as we adopted in the {{{standalone.html}previous chapter}}, so nothing to add
+  The <<<filters>>> approach is the same as we adopted in the {{{./standalone.html}previous chapter}}, so nothing to add
   in this section.
 
   Let's suppose we want to include the <<<your.groupid:your.artifactId:1.0-SNAPSHOT>>> <Solr Core> in our new
