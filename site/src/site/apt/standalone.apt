@@ -26,19 +26,7 @@ Create a new Solr Standalone archetype
   The first step to do is creating the archetype, so just type:
 
 +--------------------------------------+
-$ mvn archetype:generate \
-    -DgroupId=your.groupid \
-    -DartifactId=your.artifactId \
-    -Dversion=1.0-SNAPSHOT \
-    -DarchetypeArtifactId=solr-standalone-archetype \
-    -DarchetypeGroupId=com.sourcesense.solr \
-    -DarchetypeVersion=1.0.0
-+--------------------------------------+
-
-  Otherwise, if you installed the archetypes in <<<~/.m2/archetype-catalog.xml>>>, just type
-
-+--------------------------------------+
-$ mvn archetype:generate -DarchetypeCatalog=local
+$ mvn archetype:generate -DarchetypeCatalog=http://sourcesense.github.com/solr-packager/archetype-catalog.xml
 +--------------------------------------+
 
   then, when prompting:
@@ -74,8 +62,8 @@ your.artifactId/
         ├── filters
         │    ├── dev.properties
         │    ├── prod.properties
-        │    ├── staging.properties
-        │    └── testing.properties
+        │    ├── stage.properties
+        │    └── test.properties
         └── solr
             ├── commons
             │    ├── data-config.xml
@@ -138,16 +126,16 @@ Packaging and Run
   location and run
 
 +--------------------------------------+
-$ mvn -P(dev|testing|staging|prod) package
+$ mvn -P(dev|test|stage|prod) package
 +--------------------------------------+
 
   three important artifacts will be generated (last postfix depends on which profile were enabled)
 
 +--------------------------------------+
 target/
-├── your.artifactId-1.0-SNAPSHOT-master-(dev|testing|staging|prod).zip
-├── your.artifactId-1.0-SNAPSHOT-master-resources-(dev|testing|staging|prod).zip
-└── your.artifactId-1.0-SNAPSHOT-slave-(dev|testing|staging|prod).zip
+├── your.artifactId-1.0-SNAPSHOT-master-(dev|test|stage|prod).zip
+├── your.artifactId-1.0-SNAPSHOT-master-resources-(dev|test|stage|prod).zip
+└── your.artifactId-1.0-SNAPSHOT-slave-(dev|test|stage|prod).zip
 +--------------------------------------+
 
   the <<<your.artifactId-1.0-SNAPSHOT-master-$\{profile\}.zip>>> and

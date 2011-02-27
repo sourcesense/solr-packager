@@ -34,19 +34,7 @@ Getting started
   The first step to do is creating the archetype, so just type:
 
 +--------------------------------------+
-$ mvn archetype:generate \
-    -DgroupId=your.groupid \
-    -DartifactId=your.multicore.artifactId \
-    -Dversion=1.0-SNAPSHOT \
-    -DarchetypeArtifactId=solr-multicore-archetype \
-    -DarchetypeGroupId=com.sourcesense.solr \
-    -DarchetypeVersion=1.0.0
-+--------------------------------------+
-
-  Otherwise, if you installed the archetypes in <<<~/.m2/archetype-catalog.xml>>>, just type
-
-+--------------------------------------+
-$ mvn archetype:generate -DarchetypeCatalog=local
+$ mvn archetype:generate -DarchetypeCatalog=http://sourcesense.github.com/solr-packager/archetype-catalog.xml
 +--------------------------------------+
 
   then, when prompting:
@@ -82,8 +70,8 @@ your.multicore.artifactId/
         ├── filters
         │     ├── dev.properties
         │     ├── prod.properties
-        │     ├── staging.properties
-        │     └── testing.properties
+        │     ├── stage.properties
+        │     └── test.properties
         └── solr
             └── solr.xml
 +--------------------------------------+
@@ -124,14 +112,14 @@ your.multicore.artifactId/
   location and run
 
 +--------------------------------------+
-$ mvn -P(dev|testing|staging|prod) package
+$ mvn -P(dev|test|stage|prod) package
 +--------------------------------------+
 
   the artifact of our interested is generated under <<<target>>> dir (last postfix depends on which profile were enabled)
 
 +--------------------------------------+
 target/
-├── your.multicore.artifactId-1.0-SNAPSHOT-multicore-(dev|testing|staging|prod).zip
+├── your.multicore.artifactId-1.0-SNAPSHOT-multicore-(dev|test|stage|prod).zip
 +--------------------------------------+
 
   Let's unzip it
