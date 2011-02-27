@@ -45,23 +45,6 @@
          | Copy the Solr webapp stuff
         -->
         <fileSet>
-            <directory>${project.build.directory}/resources/solr-webapp</directory>
-            <outputDirectory>/webapps/ROOT</outputDirectory>
-            <filtered>true</filtered>
-            <excludes>
-                <exclude>**/*.ico</exclude>
-            </excludes>
-        </fileSet>
-
-        <fileSet>
-            <directory>${project.build.directory}/resources/solr-webapp</directory>
-            <outputDirectory>/webapps/ROOT</outputDirectory>
-            <includes>
-                <include>**/*.ico</include>
-            </includes>
-        </fileSet>
-
-        <fileSet>
             <directory>${basedir}/src/main/solr/</directory>
             <outputDirectory>/solr</outputDirectory>
             <filtered>true</filtered>
@@ -79,6 +62,18 @@
     </fileSets>
 
     <files>
+        <!--
+         | Copy the Solr webapp
+        -->
+        <file>
+            <source>${basedir}/${project.build.directory}/${project.build.finalName}-${environment}.war</source>
+            <destName>ROOT.war</destName>
+            <outputDirectory>/webapps</outputDirectory>
+        </file>
+
+        <!--
+         | The catalina bootstrap
+        -->
         <file>
             <source>${basedir}/${project.build.directory}/${project.build.finalName}-bootstrap.jar</source>
             <destName>bootstrap.jar</destName>
@@ -116,21 +111,6 @@
                 <include>org.apache.tomcat:juli:*</include>
             </includes>
             <outputDirectory>/bin</outputDirectory>
-        </dependencySet>
-
-        <!--
-         | Project dependencies
-        -->
-        <dependencySet>
-            <useProjectArtifact>false</useProjectArtifact>
-            <scope>runtime</scope>
-            <outputDirectory>/webapps/ROOT/WEB-INF/lib</outputDirectory>
-            <excludes>
-                <!--
-                 | exclude resources
-                -->
-                <exclude>*:*:zip:*</exclude>
-            </excludes>
         </dependencySet>
     </dependencySets>
 

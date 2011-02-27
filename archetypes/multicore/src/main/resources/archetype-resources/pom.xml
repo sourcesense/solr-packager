@@ -23,11 +23,25 @@
     <packaging>pom</packaging>
 
     <properties>
+        <!--
+         | libraries version
+        -->
         <tomcat.version>6.0.29</tomcat.version>
         <solr.version>1.4.1</solr.version>
         <slf4j.version>1.5.5</slf4j.version>
-        <solrp.version>1.0.0</solrp.version>
+        <solrp.version>1.0.1</solrp.version>
         <webapp.description>${project.artifactId}-${environment} - v${project.version}</webapp.description>
+
+        <!--
+         | common useful properties
+        -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <javac.src.version>1.5</javac.src.version>
+        <javac.target.version>1.5</javac.target.version>
+        <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ssZ</maven.build.timestamp.format>
+        <implementation.build>${maven.build.timestamp}</implementation.build>
     </properties>
 
     <build>
@@ -78,6 +92,65 @@
         </pluginManagement>
 
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.1.1</version>
+                <inherited>true</inherited>
+
+                <executions>
+                    <execution>
+                        <id>package-config</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>war</goal>
+                        </goals>
+                    </execution>
+                </executions>
+
+                <configuration>
+                    <webXml>${project.build.directory}/resources/solr-webapp/WEB-INF/web.xml</webXml>
+                    <classifier>${environment}</classifier>
+                    <webResources>
+                        <!--
+                         | webResources is overridden so can't be moved in a common place
+                        -->
+                        <resource>
+                            <directory>${project.build.directory}/resources/solr-webapp</directory>
+                            <excludes>
+                                <exclude>**/*.ico</exclude>
+                                <exclude>**/web.xml</exclude>
+                            </excludes>
+                            <filtering>true</filtering>
+                        </resource>
+
+                        <resource>
+                            <directory>${project.build.directory}/resources/solr-webapp</directory>
+                            <includes>
+                                <include>**/*.ico</include>
+                            </includes>
+                        </resource>
+
+                        <resource>
+                            <directory>${project.build.directory}/resources/solr-commons</directory>
+                            <targetPath>/WEB-INF/classes</targetPath>
+                        </resource>
+                    </webResources>
+
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                        </manifest>
+                        <manifestEntries>
+                            <Implementation-Build>${implementation.build}</Implementation-Build>
+                            <X-Compile-Source-JDK>${javac.src.version}</X-Compile-Source-JDK>
+                            <X-Compile-Target-JDK>${javac.target.version}</X-Compile-Target-JDK>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
