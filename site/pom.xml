@@ -36,64 +36,11 @@
     </distributionManagement>
 
     <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <artifactId>maven-assembly-plugin</artifactId>
-                    <dependencies>
-                        <dependency>
-                            <groupId>com.sourcesense.solr</groupId>
-                            <artifactId>solr-assemblies</artifactId>
-                            <version>${project.version}</version>
-                        </dependency>
-                    </dependencies>
-                    <executions>
-                        <execution>
-                            <id>package-solr</id>
-                            <phase>package</phase>
-                            <goals>
-                                <goal>single</goal>
-                            </goals>
-                            <configuration>
-                                <descriptorRefs>
-                                    <descriptorRef>resources</descriptorRef>
-                                </descriptorRefs>
-                            </configuration>
-                        </execution>
-                    </executions>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
                 <version>2.3.1</version>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>2.4.3</version>
-                <executions>
-                    <execution>
-                        <id>process-resources</id>
-                        <phase>post-site</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <outputDirectory>${project.reporting.outputDirectory}</outputDirectory>
-                    <resources>
-                        <resource>
-                            <directory>${basedir}/src/main/resources</directory>
-                            <filtering>true</filtering>
-                        </resource>
-                    </resources>
-                </configuration>
             </plugin>
         </plugins>
     </build>
