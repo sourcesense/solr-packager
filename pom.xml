@@ -28,7 +28,8 @@
     <name>Solr Packager</name>
     <version>1.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <description>Standalone Apache Solr embedded in Tomcat</description>
+    <description>Solr-Packager is a Maven archetype to package Standalone Apache Solr embedded in Tomcat,
+    brought to you by Sourcesense</description>
     <url>http://github.com/sourcesense/solr-packager</url>
 
     <licenses>
