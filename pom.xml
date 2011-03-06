@@ -26,7 +26,7 @@
     <groupId>com.sourcesense.solr</groupId>
     <artifactId>solr-packager</artifactId>
     <name>Solr Packager</name>
-    <version>1.0.1</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <description>Solr-Packager is a Maven archetype to package Standalone Apache Solr embedded in Tomcat,
     brought to you by Sourcesense</description>
