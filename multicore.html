@@ -27,7 +27,7 @@
         }
     </script>
           <meta name="author" content="Sourcesense - The Solr Packager Team" />
-        <meta name="Date-Revision-yyyymmdd" content="20110111" />
+        <meta name="Date-Revision-yyyymmdd" content="20110306" />
       </head>
   <body>
     <div id="wrapper">
@@ -51,8 +51,8 @@
   
     
             <div class="xleft">
-        <span id="publishDate">Last Published: 2011-01-11</span>
-                  &nbsp;| <span id="projectVersion">Version: 1.0.0</span>
+        <span id="publishDate">Last Published: 2011-03-06</span>
+                  &nbsp;| <span id="projectVersion">Version: 1.0.1</span>
                       </div>
                 <div class="xright">      
   
@@ -91,6 +91,10 @@
     <li class="none">
               <strong>Create a new Solr MultiCore Standalone archetype</strong>
         </li>
+              
+    <li class="none">
+                    <a href="archetype-catalog.xml">Archetype Catalog</a>
+          </li>
           </ul>
               <h5>Project Documentation</h5>
             <ul>
@@ -107,9 +111,17 @@
                   
                   
                   
+                  
               
         <li class="collapsed">
                     <a href="project-info.html">Project Information</a>
+                </li>
+              
+                
+                    
+              
+        <li class="collapsed">
+                    <a href="project-reports.html">Project Reports</a>
                 </li>
           </ul>
               <h5>External Links</h5>
@@ -151,13 +163,7 @@
         </div>
         <div id="bodyColumn">
           <div id="contentBox">
-            <!--  --><!-- Copyright 2010 Sourcesense --><!--  --><!-- Licensed under the Apache License, Version 2.0 (the "License"); --><!-- you may not use this file except in compliance with the License. --><!-- You may obtain a copy of the License at --><!--  --><!-- http://www.apache.org/licenses/LICENSE-2.0 --><!--  --><!-- Unless required by applicable law or agreed to in writing, software --><!-- distributed under the License is distributed on an "AS IS" BASIS, --><!-- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. --><!-- See the License for the specific language governing permissions and --><!-- limitations under the License. --><!--  --><div class="section"><h2>Introduction<a name="Introduction"></a></h2><p>In this section we will see how to create a <i>multicore Solr</i> embedded in <i>Apache Tomcat</i>.</p><p>What we suggest is managing each single core as a single <i>Maven</i> module as we raw in the <a href="#standalone.html">previous chapter</a>, then using this new <tt>archetype</tt> to aggregate all together in a single <i>multicore</i> instance.</p></div><div class="section"><h2>Getting started<a name="Getting_started"></a></h2><p>The first step to do is creating the archetype, so just type:</p><div class="source"><pre>$ mvn archetype:generate \
-    -DgroupId=your.groupid \
-    -DartifactId=your.multicore.artifactId \
-    -Dversion=1.0-SNAPSHOT \
-    -DarchetypeArtifactId=solr-multicore-archetype \
-    -DarchetypeGroupId=com.sourcesense.solr \
-    -DarchetypeVersion=1.0.0</pre></div><p>Otherwise, if you installed the archetypes in <tt>~/.m2/archetype-catalog.xml</tt>, just type</p><div class="source"><pre>$ mvn archetype:generate -DarchetypeCatalog=local</pre></div><p>then, when prompting:</p><div class="source"><pre>Choose archetype:
+            <!--  --><!-- Copyright 2010 Sourcesense --><!--  --><!-- Licensed under the Apache License, Version 2.0 (the "License"); --><!-- you may not use this file except in compliance with the License. --><!-- You may obtain a copy of the License at --><!--  --><!-- http://www.apache.org/licenses/LICENSE-2.0 --><!--  --><!-- Unless required by applicable law or agreed to in writing, software --><!-- distributed under the License is distributed on an "AS IS" BASIS, --><!-- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. --><!-- See the License for the specific language governing permissions and --><!-- limitations under the License. --><!--  --><div class="section"><h2>Introduction<a name="Introduction"></a></h2><p>In this section we will see how to create a <i>multicore Solr</i> embedded in <i>Apache Tomcat</i>.</p><p>What we suggest is managing each single core as a single <i>Maven</i> module as we raw in the <a href="./standalone.html">previous chapter</a>, then using this new <tt>archetype</tt> to aggregate all together in a single <i>multicore</i> instance.</p></div><div class="section"><h2>Getting started<a name="Getting_started"></a></h2><p>The first step to do is creating the archetype, so just type:</p><div class="source"><pre>$ mvn archetype:generate -DarchetypeCatalog=http://sourcesense.github.com/solr-packager/archetype-catalog.xml</pre></div><p>then, when prompting:</p><div class="source"><pre>Choose archetype:
 1: local -&gt; solr-standalone-archetype (Solr Packager Standalone Archetype)
 2: local -&gt; solr-multicore-archetype (Solr Packager Multicore Standalone Archetype)
 Choose a number: : 2
@@ -177,10 +183,10 @@ package: your.groupid
         &#x251c;&#x2500;&#x2500; filters
         &#x2502;     &#x251c;&#x2500;&#x2500; dev.properties
         &#x2502;     &#x251c;&#x2500;&#x2500; prod.properties
-        &#x2502;     &#x251c;&#x2500;&#x2500; staging.properties
-        &#x2502;     &#x2514;&#x2500;&#x2500; testing.properties
+        &#x2502;     &#x251c;&#x2500;&#x2500; stage.properties
+        &#x2502;     &#x2514;&#x2500;&#x2500; test.properties
         &#x2514;&#x2500;&#x2500; solr
-            &#x2514;&#x2500;&#x2500; solr.xml</pre></div><p>The <tt>filters</tt> approach is the same as we adopted in the <a href="#standalone.html">previous chapter</a>, so nothing to add in this section.</p><p>Let's suppose we want to include the <tt>your.groupid:your.artifactId:1.0-SNAPSHOT</tt> <i>Solr Core</i> in our new <i>multicore</i> artifact; first of all, let's add the dependency in the <tt>pom.xml</tt> (don't forget to install, first!)</p><div class="source"><pre>...
+            &#x2514;&#x2500;&#x2500; solr.xml</pre></div><p>The <tt>filters</tt> approach is the same as we adopted in the <a href="./standalone.html">previous chapter</a>, so nothing to add in this section.</p><p>Let's suppose we want to include the <tt>your.groupid:your.artifactId:1.0-SNAPSHOT</tt> <i>Solr Core</i> in our new <i>multicore</i> artifact; first of all, let's add the dependency in the <tt>pom.xml</tt> (don't forget to install, first!)</p><div class="source"><pre>...
     &lt;dependency&gt;
         &lt;groupId&gt;your.groupid&lt;/groupId&gt;
         &lt;artifactId&gt;your.artifactId&lt;/artifactId&gt;
@@ -196,8 +202,8 @@ package: your.groupid
     &lt;cores adminPath=&quot;/admin/cores&quot;&gt;
         &lt;core name=&quot;your.artifactId&quot; instanceDir=&quot;your.artifactId&quot; /&gt;
     &lt;/cores&gt;
-&lt;/solr&gt;</pre></div><p>We're now ready to package our <i>Apache Solr</i> based application: open the shell, go to the new generated archetype location and run</p><div class="source"><pre>$ mvn -P(dev|testing|staging|prod) package</pre></div><p>the artifact of our interested is generated under <tt>target</tt> dir (last postfix depends on which profile were enabled)</p><div class="source"><pre>target/
-&#x251c;&#x2500;&#x2500; your.multicore.artifactId-1.0-SNAPSHOT-multicore-(dev|testing|staging|prod).zip</pre></div><p>Let's unzip it</p><div class="source"><pre>$ cd target
+&lt;/solr&gt;</pre></div><p>We're now ready to package our <i>Apache Solr</i> based application: open the shell, go to the new generated archetype location and run</p><div class="source"><pre>$ mvn -P(dev|test|stage|prod) package</pre></div><p>the artifact of our interested is generated under <tt>target</tt> dir (last postfix depends on which profile were enabled)</p><div class="source"><pre>target/
+&#x251c;&#x2500;&#x2500; your.multicore.artifactId-1.0-SNAPSHOT-multicore-(dev|test|stage|prod).zip</pre></div><p>Let's unzip it</p><div class="source"><pre>$ cd target
 $ unzip your.multicore.artifactId-1.0-SNAPSHOT-multicore-${profile}.zip</pre></div><p>we can now execute the <i>Tomcat</i>-based <i>Solr</i> instance:</p><div class="source"><pre>$ cd your.multicore.artifactId-1.0-SNAPSHOT-multicore-${profile}
 $ ./bin/catalina.(sh|bat) (run|start)</pre></div><p>now open your preferred browser on go to</p><div class="source"><pre>http://localhost:8080/</pre></div><p>if you can see the <i>Apache Solr</i> admin list, your <i>Solr</i> instance is up and running! :)</p></div>
           </div>
