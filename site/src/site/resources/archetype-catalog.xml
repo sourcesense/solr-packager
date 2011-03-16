@@ -19,13 +19,13 @@
         <archetype>
             <groupId>com.sourcesense.solr</groupId>
             <artifactId>solr-standalone-archetype</artifactId>
-            <version>1.0.1</version>
+            <version>1.0.2</version>
             <description>Solr Packager Standalone Archetype</description>
         </archetype>
         <archetype>
             <groupId>com.sourcesense.solr</groupId>
             <artifactId>solr-multicore-archetype</artifactId>
-            <version>1.0.1</version>
+            <version>1.0.2</version>
             <description>Solr Packager Multicore Standalone Archetype</description>
         </archetype>
     </archetypes>
