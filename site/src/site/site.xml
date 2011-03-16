@@ -32,6 +32,10 @@
             <item name="Archetype Catalog" href="archetype-catalog.xml" />
         </menu>
 
+        <menu name="Miscellaneous">
+            <item name="Powered by" href="powered-by.html" />
+        </menu>
+
         <menu ref="reports" />
 
         <menu name="External Links">
