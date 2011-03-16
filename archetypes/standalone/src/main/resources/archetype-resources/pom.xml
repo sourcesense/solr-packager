@@ -60,6 +60,19 @@
                         </execution>
 
                         <execution>
+                            <id>package-slave-config</id>
+                            <phase>process-resources</phase>
+                            <goals>
+                                <goal>single</goal>
+                            </goals>
+                            <configuration>
+                                <descriptorRefs>
+                                    <descriptorRef>slave-resources</descriptorRef>
+                                </descriptorRefs>
+                            </configuration>
+                        </execution>
+
+                        <execution>
                             <id>package-solr-tomcat</id>
                             <phase>package</phase>
                             <goals>
