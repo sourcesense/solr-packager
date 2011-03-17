@@ -254,8 +254,8 @@
 
             <build>
                 <filters>
-                    <filter>src/main/filters/prod.properties</filter>
-                    <filter>src/main/filters/dev.properties</filter>
+                    <filter>${basedir}/src/main/filters/prod.properties</filter>
+                    <filter>${basedir}/src/main/filters/dev.properties</filter>
                 </filters>
 
                 <plugins>
@@ -263,8 +263,8 @@
                         <artifactId>maven-assembly-plugin</artifactId>
                         <configuration>
                             <filters>
-                                <filter>src/main/filters/prod.properties</filter>
-                                <filter>src/main/filters/dev.properties</filter>
+                                <filter>${basedir}/src/main/filters/prod.properties</filter>
+                                <filter>${basedir}/src/main/filters/dev.properties</filter>
                             </filters>
                         </configuration>
                     </plugin>
@@ -281,8 +281,8 @@
 
             <build>
                 <filters>
-                    <filter>src/main/filters/prod.properties</filter>
-                    <filter>src/main/filters/stage.properties</filter>
+                    <filter>${basedir}/src/main/filters/prod.properties</filter>
+                    <filter>${basedir}/src/main/filters/stage.properties</filter>
                 </filters>
 
                 <plugins>
@@ -290,8 +290,8 @@
                         <artifactId>maven-assembly-plugin</artifactId>
                         <configuration>
                             <filters>
-                                <filter>src/main/filters/prod.properties</filter>
-                                <filter>src/main/filters/stage.properties</filter>
+                                <filter>${basedir}/src/main/filters/prod.properties</filter>
+                                <filter>${basedir}/src/main/filters/stage.properties</filter>
                             </filters>
                         </configuration>
                     </plugin>
@@ -308,8 +308,8 @@
 
             <build>
                 <filters>
-                    <filter>src/main/filters/prod.properties</filter>
-                    <filter>src/main/filters/test.properties</filter>
+                    <filter>${basedir}/src/main/filters/prod.properties</filter>
+                    <filter>${basedir}/src/main/filters/test.properties</filter>
                 </filters>
 
                 <plugins>
@@ -317,8 +317,8 @@
                         <artifactId>maven-assembly-plugin</artifactId>
                         <configuration>
                             <filters>
-                                <filter>src/main/filters/prod.properties</filter>
-                                <filter>src/main/filters/test.properties</filter>
+                                <filter>${basedir}/src/main/filters/prod.properties</filter>
+                                <filter>${basedir}/src/main/filters/test.properties</filter>
                             </filters>
                         </configuration>
                     </plugin>
@@ -335,7 +335,7 @@
 
             <build>
                 <filters>
-                    <filter>src/main/filters/prod.properties</filter>
+                    <filter>${basedir}/src/main/filters/prod.properties</filter>
                 </filters>
 
                 <plugins>
@@ -343,7 +343,7 @@
                         <artifactId>maven-assembly-plugin</artifactId>
                         <configuration>
                             <filters>
-                                <filter>src/main/filters/prod.properties</filter>
+                                <filter>${basedir}/src/main/filters/prod.properties</filter>
                             </filters>
                         </configuration>
                     </plugin>
