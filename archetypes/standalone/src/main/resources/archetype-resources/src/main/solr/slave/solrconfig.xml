@@ -3,7 +3,7 @@
 
     <abortOnConfigurationError>${solr.abortOnConfigurationError}</abortOnConfigurationError>
 
-    <dataDir>${solr.data.dir.master}</dataDir>
+    <dataDir>${solr.data.dir.slave}</dataDir>
 
     <updateHandler class="solr.DirectUpdateHandler2" />
 
