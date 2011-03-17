@@ -67,7 +67,7 @@
         -->
         <file>
             <source>${basedir}/${project.build.directory}/${project.build.finalName}-${environment}.war</source>
-            <destName>ROOT.war</destName>
+            <destName>${solr.webapp.name}.war</destName>
             <outputDirectory>/webapps</outputDirectory>
         </file>
 
