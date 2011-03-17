@@ -25,6 +25,9 @@
 
     <body>
         <release version="1.0.2" date="TBD" description="Bugfix release">
+            <action type="fix" issue="4" dev="simonetripodi">
+                Custom context root.
+            </action>
             <action type="fix" issue="5" dev="simonetripodi">
                 Slave classifier doesn't get installed in M2 local repo.
             </action>
