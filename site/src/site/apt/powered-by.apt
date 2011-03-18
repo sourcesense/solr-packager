@@ -27,5 +27,5 @@ Who's using Sourcesense solr-packager
   the <<<solr-packager>>> archetype.
 
   * Buzzers
-  * {{{http://www.ilsole24ore.com/}Il Sole 24 Ore}}
-
+  * {{{http://www.ilsole24ore.com/}Il Sole 24 Ore}}: replaced old commercial search engine solution with Apache Solr,
+    developing plugins and packaging with solr-packager.
