@@ -30,7 +30,12 @@
         <solr.version>1.4.1</solr.version>
         <slf4j.version>1.5.5</slf4j.version>
         <solrp.version>1.0.2</solrp.version>
+
+        <!--
+         | Solr properties
+        -->
         <webapp.description>${project.artifactId}-${environment} - v${project.version}</webapp.description>
+        <solr.webapp.name>ROOT</solr.webapp.name>
 
         <!--
          | common useful properties
