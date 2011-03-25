@@ -28,5 +28,17 @@
             <version>1.0.3</version>
             <description>Solr Packager Multicore Standalone Archetype (Tomcat)</description>
         </archetype>
+        <archetype>
+            <groupId>com.sourcesense.solr</groupId>
+            <artifactId>solr-standalone-jetty-archetype</artifactId>
+            <version>1.0.3</version>
+            <description>Solr Packager Standalone Archetype (Jetty)</description>
+        </archetype>
+        <archetype>
+            <groupId>com.sourcesense.solr</groupId>
+            <artifactId>solr-multicore-jetty-archetype</artifactId>
+            <version>1.0.3</version>
+            <description>Solr Packager Multicore Standalone Archetype (Jetty)</description>
+        </archetype>
     </archetypes>
 </archetype-catalog>
