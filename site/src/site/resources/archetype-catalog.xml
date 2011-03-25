@@ -18,15 +18,15 @@
     <archetypes>
         <archetype>
             <groupId>com.sourcesense.solr</groupId>
-            <artifactId>solr-standalone-archetype</artifactId>
-            <version>1.0.2</version>
-            <description>Solr Packager Standalone Archetype</description>
+            <artifactId>solr-standalone-tomcat-archetype</artifactId>
+            <version>1.0.3</version>
+            <description>Solr Packager Standalone Archetype (Tomcat)</description>
         </archetype>
         <archetype>
             <groupId>com.sourcesense.solr</groupId>
-            <artifactId>solr-multicore-archetype</artifactId>
-            <version>1.0.2</version>
-            <description>Solr Packager Multicore Standalone Archetype</description>
+            <artifactId>solr-multicore-tomcat-archetype</artifactId>
+            <version>1.0.3</version>
+            <description>Solr Packager Multicore Standalone Archetype (Tomcat)</description>
         </archetype>
     </archetypes>
 </archetype-catalog>

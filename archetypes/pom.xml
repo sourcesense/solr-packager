@@ -48,8 +48,8 @@
     </build>
 
     <modules>
-        <module>standalone</module>
-        <module>multicore</module>
+        <module>standalone-tomcat</module>
+        <module>multicore-tomcat</module>
     </modules>
 
 </project>
