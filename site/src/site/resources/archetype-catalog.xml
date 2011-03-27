@@ -19,25 +19,25 @@
         <archetype>
             <groupId>com.sourcesense.solr</groupId>
             <artifactId>solr-standalone-tomcat-archetype</artifactId>
-            <version>1.0.3</version>
+            <version>2.0</version>
             <description>Solr Packager Standalone Archetype (Tomcat)</description>
         </archetype>
         <archetype>
             <groupId>com.sourcesense.solr</groupId>
             <artifactId>solr-multicore-tomcat-archetype</artifactId>
-            <version>1.0.3</version>
+            <version>2.0</version>
             <description>Solr Packager Multicore Standalone Archetype (Tomcat)</description>
         </archetype>
         <archetype>
             <groupId>com.sourcesense.solr</groupId>
             <artifactId>solr-standalone-jetty-archetype</artifactId>
-            <version>1.0.3</version>
+            <version>2.0</version>
             <description>Solr Packager Standalone Archetype (Jetty)</description>
         </archetype>
         <archetype>
             <groupId>com.sourcesense.solr</groupId>
             <artifactId>solr-multicore-jetty-archetype</artifactId>
-            <version>1.0.3</version>
+            <version>2.0</version>
             <description>Solr Packager Multicore Standalone Archetype (Jetty)</description>
         </archetype>
     </archetypes>
