@@ -50,6 +50,7 @@
     <modules>
         <module>standalone-tomcat</module>
         <module>multicore-tomcat</module>
+        <module>standalone-jetty</module>
     </modules>
 
 </project>
